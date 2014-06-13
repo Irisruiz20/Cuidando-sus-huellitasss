@@ -1,0 +1,363 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>Aplic. Web de jQuery Mobile</title>
+<link href="jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css"/>
+<script src="jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="jquery.mobile-1.0.min.js" type="text/javascript"></script>
+<script language="javascript">
+var nombre,letra,convertir,ancho,x,ancho1,w,tel,n,y,z,a,b;
+function nombre(){
+nombre=document.getElementById("textnombre").value;
+convertir=nombre.toUpperCase();
+document.getElementById("textnombre").value=convertir
+ancho=nombre.length;
+nombre=document.getElementById("textnombre").value; //actualiza
+for(x=0;x<=ancho-1;x++){//valor inicial,condicion, incremento
+	if((nombre.charAt(x)>='A')&&(nombre.charAt(x)<='Z')||(nombre.charAt(x)==' ')){//rango de valores x por que no sabemos la posicion. 
+	}
+	else{
+		alert("Introduciste un caracter inválido")
+		break;
+	}
+}	
+}
+var cadena,ancho1,x,y,z,a,b;
+function correo(){
+cadena=document.getElementById("textemail").value;
+ancho1=cadena.length;//ancho
+
+ {
+	if(((cadena.charAt(0)>='0')&&(cadena.charAt(0)<='9'))||(cadena.charAt(0)=='@'))//si se cumple el rango de valores 
+	{
+			alert("Primer caracter inválido");
+		}
+	else
+	{
+		y=cadena.indexOf('@');//primer caracter
+		z=cadena.lastIndexOf('@');//ultimo caracter 
+		if(y!=z){
+			alert("Solo introduce un @");
+			
+		}
+		else{
+			if((y==-1)&&(z==-1))
+			{
+			alert("Introduce un @");	
+			
+				}
+				else{
+					a=cadena.indexOf('.');
+					b=cadena.lastIndexOf('.');
+	          if(a!=b)
+			  {
+				  alert("Solo introduce un punto");
+				  
+			  }
+			  else{
+				  if((a==-1)&&(b==-1)){//if anidado 
+					  alert("Introduce un punto");
+					  
+					  }
+			  }
+					}
+			}
+	
+	}		
+ }
+}	
+var telef,t,yu;
+function telefono(){
+	telef=document.getElementById("texttelefono").value;
+	yu=telef.length;
+	for(t=0;t<=yu;t++){
+	if((telef.charAt(t)>=0)&&(telef.charAt(t)<=9)||(telef.charAt(t)==" ")||(telef.charAt(t)=='-'))
+	{
+	}
+	else
+	{
+		alert("Introduce un valor numérico Por favor :)");
+		document.getElementById("texttelefono").value="";
+		break; // cerrar el ciclo 
+	}
+	}
+}
+	
+function asunto(){
+	var asunto= document.getElementById("textasunto").value;
+	var conviert=asunto.toUpperCase();
+	document.getElementById("textasunto").value=conviert;
+}
+function boton(){
+var	segu1=document.getElementById("textseguridad" ).value;
+var	segu2=document.getElementById("textseguridad2").value;
+var	correo=document.getElementById("textemail").value;
+var	asunto=document.getElementById("textasunto").value;
+var	nom=document.getElementById("textnombre").value;
+var	telefono=document.getElementById("texttelefono").value;	
+var s1=segu1.length;
+var s2=segu2.length;
+var c=correo.length;
+var s=asunto.length;
+var m=nom.length;
+var o=telefono.length;
+if((s1==0)||(s2==0)||(c==0)||(s==0)||(m==0)||(o==0)){
+	alert("Introduce todos los datos");
+}
+	else{
+		if(segu1!=segu2){
+			alert("Introduce el código de seguridad correctamente");
+		}
+			else{
+			
+		alert("Mensaje Enviado");
+document.getElementById("textnombre").value="";
+document.getElementById("textemail").value="";
+document.getElementById("texttelefono").value="";
+document.getElementById("textasunto").value="";
+document.getElementById("textseguridad2").value="";
+		}
+	}	
+	}	
+
+</script> 
+</head> 
+<body> 
+
+<div data-role="page" id="page">
+	<div data-role="header">
+		<h1>Cuidando sus Huellas.</h1>
+	</div>
+	<div data-role="content">	
+		<ul data-role="listview">
+			<li><a href="#page2">¿Quiénes somos?</a></li>
+            <li><a href="#page3">Servicios y Productos</a></li>
+			<li><a href="#page4">Equipo</a></li>
+            <li><a href="#page5">Contáctanos</a></li>
+		</ul>		
+	</div>
+    <center>
+      <img src="Imagnes/10365787_10152442001245692_3780427572009668582_n.jpg" width="60%" height="50%">
+          </center>
+<div data-role="footer">
+    <h4>Iris Ruiz</h4>
+	</div>
+</div>
+
+<div data-role="page" id="page2">
+	<div data-role="header">
+		<h1>¿Quiénes somos?</h1>
+	</div>
+	<div data-role="content">	
+    <h1> "Cuidando sus huellas" </h1>
+	<h2>	Misión </h2>
+Somos un grupo de personas conscientes de la importancia de la esterilización y tenencia responsable.
+
+Somos personas que queremos ser parte de una red de distribución de información y a través de este medio de comunicación, exponer todas las ventajas de adoptar un animal (o un hermano no humano), para procurar una vida y un trato digno a los mismos.
+
+Somos una gran comunidad que promueve el respeto entre todos y cada uno de los habitantes de este planeta.
+
+Somos parte de un equipo que tenemos la meta formar una red que difunda los valores que individualmente hemos tratado de promover.
+
+ADOPTA… ¡CAMBIA TU VIDA!
+<center>
+<img src="Imagnes/549512_10151207891030692_509386167_n.jpg" width="50%" height="50%"></center>
+<h3> Visión </h3>
+ Somos personas interesadas en contribuir desde nuestra trinchera a solucionar la situación de animales abandonados, en situación de calle y/o aquellos que se perdieron del calor de sus hogares y se encuentran sin una familia amorosa,responsable.
+ <center><img src="Imagnes/409486_10150614861015692_1657105452_n.jpg" width="30%" height="25%"> </center>
+ <h4> VALORES </h4>
+ <center><h5> Solidaridad </h5></center>
+  Acompañamos y apoyamos toda acción que contribuya al bienestar de los animales y conservación del ambiente.
+   <center><h5> Compromiso Social </h5></center>
+ Trabajamos por el cumplimiento y difusión de las leyes y normas referentes a la protección de los animales y el ambiente; que están consagradas en nuestra constitución.
+ <br>
+      <center><h5>Amor</h5></center>
+Amor: Actuamos en forma afectuosa dando amor y cariño a los animales.
+             <center><h5>Respeto</h5></center>
+Reconocemos el respeto que se debe tener a toda vida animal y a la naturaleza.
+            <center><h5>Responsabilidad </h5></center>
+Respondemos por nuestras acciones y cumplimos con ética los compromisos.
+           <center><h5>Honestidad</h5></center>
+Nuestros actos son fieles a la verdad, con rectitud de espíritu, sana intención y dispuestos a reconocer y corregir nuestros errores.
+<br>
+ <center><img src="Imagnes/17872_295364685691_1290035_n.jpg" width="50%" height="50%"> </center>
+ </div>
+	<div data-role="footer">
+		<h4>Iris Ruiz</h4>
+	</div>
+</div>
+
+<div data-role="page" id="page3">
+	<div data-role="header">
+		<h1>Productos y Servicios</h1>
+	</div>
+	<div data-role="content">	
+		Ademas de ser una fundación destacada para nuestros angeles peludos, tambien contamos con productos y servicios de veterinaria en determinados días y horarios.
+        Ofrecemos servicios de calidad haciendo un esfuerzo especial por mantener precios justos, porque la atención preventiva y oportuna de tu animal de compañía es nuestra prioridad.
+        <h1> Servicios </h1>	
+       CONTAMOS CON:Consulta, vacunación, desparasitación, cirugía con anestesia inhalada, hospitalización, rayos x, ecografía, electrocardiograma, cavitrón (limpieza dental) muestras de laboratorio y tratamiento alternativo de acupuntura.
+     <center>  <h2> Días y horarios </h2></center>
+       Horarios: Lunes a viernes de 8:00 am a 6:00 pm Sábado de 8:00 am a 5:00 pm Domingo de 9:30 am a 2:30 pm
+       <br>
+      
+    <img src="Imagnes/tt.jpg" width="40%" height="40%">
+    <img src="Imagnes/tt1.jpg" width="40%" height="40%"> 
+    
+    <h3> Tienda </h3>
+    
+    Con nosotros encuentras: placas de identificación entregadas al instante, correas, collares, camas, casas, transportadoras, gran variedad de juguetes, prendas de temporada, productos para prevención de pulgas y garrapatas, distintas marcas de alimento Premium, productos para entrenar a tu perro o gato, etc.; además, para ti o para que hagas “regalos con causa”, tenemos nuestra línea de diseño para humanos (camisetas, delantales, bolsas, morrales, tazas, pulseras). Te presentamos imagenes de algunos accesorios mencionados.
+    <br>
+     <center><h4>Casa</h4></center>
+  <center><img src="Imagnes/bhgy.jpg" width="40%" height="40%"> </center>
+  <center><h4>Trastes </h4></center>
+    <center><img src="Imagnes/hbjhb.jpg" width="40%" height="50%"></center>
+   <center> <h4>Ropa</h4></center>
+    <center><img src="Imagnes/hgvgh.jpg" width="40%" height="40%"> </center>
+    <center><h4>Cama</h4> </center>
+    <center><img src="Imagnes/hvgh.jpg" width="40%" height="40%"></center>
+    <center><h4>Sombrilla con correa </h4></center>
+   <center> <img src="Imagnes/jxnvd.jpg" width="40%" height="40%"> </center>
+   <center> <h4>Placas de identificación </h4>
+  <center> <img src="Imagnes/placa.jpg" width="40%" height="25%"></center>
+  
+  <center><h5>Collares</h5></center>
+  
+<center>  <img src="Imagnes/collar.jpg" width="40%" height="40%"></center></div>
+<div data-role="footer">
+    <h4>Iris Ruiz</h4>
+	</div>
+</div>
+
+<div data-role="page" id="page4">
+	<div data-role="header">
+		<h1>Equipo</h1>
+	</div>
+	<div data-role="content">	
+		<center><h1>"Hermanitos 10"</h1></center>
+        Este equipo de trabajo se dedicó a trabajar día y noche para realizar este proyecto en Jquery y JavaScript, para lograr hacer lo mejor de ello los nombres de las personas que lo conforman son:
+ <center> 
+   <img src="Imagnes/10418315_739300432794494_3923840802888548977_n.jpg" width="70%" height="50%">
+ </center>
+ 
+<h3>Iris Ruiz</h3>
+<ul>
+<li><h4>Edad:</h4>17 Años.</li>
+<li><h4>Pasatiempos:</h4>Jugar con los animales, jugar basquet, ver TV principalmente Avenida Brasil, Comer de todo, dormir...</li>
+<li><h4>Descripción</h4>Alta, delgada, linda, respetuosa,ama a los perros, sociable, sentimental...</li>
+
+<center>
+   <img src="Imagnes/1614106_10200429596261624_2109264287_o.jpg" width="40%" height="60%">
+</center>
+</ul>
+
+<h3>Nestor Sanchez</h3>
+<ul>
+<li><h4>Edad:</h4>16 Años.</li>
+<li><h4>Pasatiempos:</h4>Programar en JavaScript, Jugar con sus mascotas,escuchar música etc.</li>
+<li><h4>Descripción</h4>Amable,Sociable,alto,delgado, carismático...</li>
+
+<center>
+  <img src="Imagnes/IMG_20140522_092202.jpg" width="40%" height="60%">
+</center>
+</ul>
+
+<h3>Laura Mejia</h3>
+<ul>
+<li><h4>Edad:</h4>17 Años.</li>
+<li><h4>Pasatiempos:</h4>Salir con sus amigos, escuchar música, jugar pou...</li>
+<li><h4>Descripción</h4>Sociable, linda, chaparrita,con muchas metas en la vida...</li>
+
+<center>
+  <img src="Imagnes/1064150_556722704385602_785937074_o.jpg" width="60%" height="60%">
+</center>
+</ul>
+
+<h3>Miryan Estrada</h3>
+<ul>
+<li><h4>Edad:</h4>17 Años.</li>
+<li><h4>Pasatiempos:</h4>Estar en casa, internet, salir con sus amigos, escuchar música etc.</li>
+<li><h4>Descripción</h4>Chaparrita, reservada, respetuosa, linda...</li>
+
+<center>
+  <img src="Imagnes/604006_509461749102219_1077552184_n.jpg" width="60%" height="60%">
+</center>
+</ul>
+
+<h3>Uriel Baizan</h3>
+<ul>
+<li><h4>Edad:</h4>17 Años.</li>
+<li><h4>Pasatiempos:</h4>Salir con sus amigos, sociable...</li>
+<li><h4>Descripción</h4>Medio alto,color de piel morena. respetuoso, le gusta escuchar música...</li>
+
+<center>
+  <img src="Imagnes/1011259_725412377516756_6282811579318473302_n.jpg" width="50%" height="50%">
+</center>
+</ul>		
+	</div>
+	<div data-role="footer">
+		<h4>Iris Ruiz</h4>
+	</div>
+</div>
+<div data-role="page" id="page5">
+	<div data-role="header">
+		<h1>Formulario</h1>
+	</div>
+	<div data-role="content">	
+		<table width="0" border="0">
+  <tr>
+    <td>Nombre:</td>
+    <td><div data-role="fieldcontain">
+      <label for="textinput"></label>
+      <input type="text" name="textnombre" id="textnombre" onBlur="nombre()" value=""  />
+    </div></td>
+  </tr>
+  <tr>
+    <td>Email:</td>
+    <td><div data-role="fieldcontain">
+      <label for="textinput"></label>      <input type="text" name="textemail"  onBlur="correo()"id="textemail"  value=""  />
+    </div></td>
+  </tr>
+  <tr>
+    <td>Telefono:</td>
+    <td><div data-role="fieldcontain">
+      <label for="textinput"></label>
+      <input type="text"  onBlur="telefono()"name="textrelefono" id="texttelefono"  value=""  />
+      
+    </div></td>
+  </tr>
+  <tr>
+   <td>Asunto:</td>
+    <td><div data-role="fieldcontain">
+      <label for="textarea"></label>
+      <textarea cols="40" rows="8" name="textasunto" onBlur="asunto()" id="textasunto"></textarea>
+    </div></td>
+  
+  <tr>
+   <center> <td>Seguridad</td> </center>
+      <td></td>
+  </tr>
+  <tr>
+    <td><div data-role="fieldcontain">
+      <label for="textinput"></label>
+      <input type="text" name="textseguridad" id="textseguridad"  onBlur="seguridad"disabled  value="123456"  />
+    </div></td>
+    <td><div data-role="fieldcontain">
+      <label for="textinput2"></label>
+      <input type="text" name="textseguridad2" id="textseguridad2" value=""  />
+    </div></td>
+  </tr>
+  <tr>
+    <td colspan="2"><button onClick="boton()">ENVIAR</button></td>
+ 
+  </tr>
+</table>
+		
+	</div>
+	<div data-role="footer">
+		<h4>Iris Ruiz</h4>
+	</div>
+</div>
+
+</body>
+</html>
